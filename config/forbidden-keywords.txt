@@ -1,3 +1,4 @@
 release
 keyword.*
 script
+edit-forbidden-file
