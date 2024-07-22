@@ -56,16 +56,16 @@ jobs:
         echo
 
         echo "safelisted files"
-        cat ../secure-gha/config/safelisted-files.txt
+        cat ../../secure-gha/config/safelisted-files.txt
         echo
         echo
         for changed_file in $(cat changed-files.txt); do
-                if grep -q $changed_file ../secure-gha/config/safelisted-files.txt; then
+                if grep -q $changed_file ../../secure-gha/config/safelisted-files.txt; then
                         echo "file $changed_file is safelisted for keywords check"
                         continue
                 fi
 
-                for keyword in $(cat ../secure-gha/config/forbidden-keywords.txt); do
+                for keyword in $(cat ../../secure-gha/config/forbidden-keywords.txt); do
                         echo "checking for keyword $keyword"
                         if grep -q $keyword "$changed_file"; then
                             echo "$changed_file has forbidden keywords"
