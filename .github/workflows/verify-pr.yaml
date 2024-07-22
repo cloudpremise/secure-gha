@@ -33,7 +33,15 @@ jobs:
         done;    
       env:
         GH_TOKEN: ${{ github.token }}
+
+    - uses: actions/checkout@v4
+      with:
+        path: for-verification
+        ref: ${{ github.head_ref }}
+
+
     - name: check forbidden keywords
+      working-directory: for-verification
       run: |
         #!/bin/bash
 
