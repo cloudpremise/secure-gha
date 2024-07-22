@@ -14,7 +14,6 @@ jobs:
     - uses: actions/checkout@v4
     - name: check forbidden files
       run: |
-        pwd && ls -ltr
         gh pr diff ${{ github.event.number }} -R ${{ github.repository }} --name-only > changed-files.txt
         cat changed-files.txt
         cat config/forbidden-files.txt
@@ -46,9 +45,6 @@ jobs:
       run: |
         #!/bin/bash
 
-        pwd && ls -ltr
-        ls -ltr ../
-        ls -ltr ../../
         gh pr diff ${{ github.event.number }} -R ${{ github.repository }} --name-only > changed-files.txt
         echo "changed files:"
         cat changed-files.txt
