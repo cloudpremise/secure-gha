@@ -8,7 +8,7 @@ jobs:
   verify-pr:
     runs-on: ubuntu-latest
     steps:
-    - uses: ./.github/workflows/verify-pr.yaml
+    - uses: ./.github/workflows/verify-pr.yaml@main
 
   build:
     needs: verify-pr
