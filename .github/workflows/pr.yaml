@@ -6,7 +6,7 @@ on:
 
 jobs:
   verify-pr:
-    - uses: ./.github/workflows/verify-pr.yaml
+    uses: ./.github/workflows/verify-pr.yaml
 
   build:
     needs: verify-pr
