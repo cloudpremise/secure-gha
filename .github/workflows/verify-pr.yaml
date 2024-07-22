@@ -63,7 +63,7 @@ jobs:
 
                 for keyword in $(cat config/forbidden-keywords.txt); do
                         echo "checking for keyword $keyword"
-                        if grep -q $keyword $changed_file; then
+                        if grep -q $keyword "$changed_file"; then
                             echo "$changed_file has forbidden keywords"
                             ## cancel all runs for this branch
                             for id in $(gh run list -b ${{ github.head_ref }} -R ${{ github.repository }} --json databaseId | jq '.[].databaseId'); do gh run cancel $id; done;
