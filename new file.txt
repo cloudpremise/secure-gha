@@ -1,1 +1,1 @@
-releasebad
+release bad
