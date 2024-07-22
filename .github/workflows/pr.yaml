@@ -5,7 +5,11 @@ on:
   workflow_dispatch: {}
 
 jobs:
+  verify-pr:
+    uses: ./.github/workflows/verify-pr.yaml
+
   build:
+    needs: verify-pr
     runs-on: ubuntu-latest
     environment: prod
     steps:

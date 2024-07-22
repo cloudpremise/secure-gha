@@ -1,7 +1,6 @@
 name: verify-pr
 on:
-  pull_request_target:
-  workflow_dispatch: {}
+  workflow_call: {}
 
 permissions:
   pull-requests: write
