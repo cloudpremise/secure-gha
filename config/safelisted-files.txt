@@ -1,2 +1,3 @@
 config/forbidden-keywords.txt
 thisfilecanhavekeywords.txt
+changing-safelisted-file
